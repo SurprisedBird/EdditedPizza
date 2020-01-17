@@ -15,11 +15,6 @@
 			  		<img src="{{pizza.model_picture.url}}" class="card-img-top" alt="">
 				  	<div class="card-body">
 					    <p class="card-text">Ингредиенты: {{pizza.ingridients.name}}</p>
-					    <p class="card-text">
-					    	{%for size in sizes%}
-								<input type="radio" value={{size.name}} name="size"> {{size.name}} <Br>
-							{%endfor%}
-						</p>
 						<input type="number"  name="count">
 						<input class="btn btn-primary" aria-pressed="true" type="submit" value="Добавить в корзину">
 					</div>
