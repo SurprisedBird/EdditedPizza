@@ -1,0 +1,30 @@
+{%extends "base_template.html"%}
+{%block main%}
+	<h1>Dishes</h1>
+	<div>
+		{% for pizza in pizzas%}
+		<h2>{{pizza.name}}, {{pizza.price}}</h2>
+
+		<form method="post" action="/add/pizza/"> {% csrf_token %}
+			 <div class="row">
+			 	<div class="col">
+
+					<div class="card" style="width: 18rem;">
+					<input type="text" value="{{pizza.id}}" name="pizza_id" hidden="id">
+					<h5 class="card-title">{{pizza.name}}</h5>
+			  		<img src="{{pizza.model_picture.url}}" class="card-img-top" alt="">
+				  	<div class="card-body">
+					    <p class="card-text">Ингредиенты: {{pizza.ingridients.name}}</p>
+						<input type="number"  name="count">
+						<input class="btn btn-primary" aria-pressed="true" type="submit" value="Добавить в корзину">
+					</div>
+			 </div>
+			    
+	  		</div>
+			</div>
+		</form>
+		{%endfor%}
+</div>
+
+{% endblock %}
+ 
