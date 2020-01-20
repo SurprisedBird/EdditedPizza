@@ -66,6 +66,7 @@ TEMPLATES = [
                 'django.template.context_processors.tz',
                 'django.template.context_processors.request',
                 'django.contrib.messages.context_processors.messages',
+                'dishes.context_processors.orders',
                 'dishes.context_processors.sizes'
             ],
         },
